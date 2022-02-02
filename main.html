@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+
+        body {
+            margin: 0;
+            height: 300vh;
+        }
+
+        /* Welcome Section */
+        #welcome-section {
+            background-color: rgb(56, 56, 56);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .name {
+            color: rgb(255, 255, 255);
+            /* background-color:gray; */
+            font-size: 3em;
+            font-weight: bold;
+            /* font-family:'Times New Roman', Times, serif; */
+            font-style: italic;
+            padding: 0;
+            margin: 0;
+            transition: transform 0.5s ease;
+
+        }
+
+        .name:hover {
+            transform: scale(1.2);
+        }
+
+        .name-compliment {
+            font-size: 1.5em;
+
+            font-family: 'Courier New', Courier, monospace;
+            color: rgb(204, 22, 22);
+            font-style: italic;
+        }
+
+        @media screen and (max-width:500px) {
+            body {
+                width: 100vw;
+            }
+
+            .name {
+                font-size: 1.5em;
+            }
+
+            .name-compliment {
+                font-size: 0.75em;
+            }
+        }
+
+        /* End of Welcome Section */
+
+        /* Projects section  */
+        #projects-container {
+            background-color: #D5BF86;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 60px;
+            /* background-color:rgb(8, 255, 152); */
+            width: 80%;
+            margin: 30px 10%;
+            height: 70%;
+        }
+
+        #section-project-desc {
+            color: rgb(58, 1, 163);
+            margin-top: 20px;
+            font-size: 4em;
+            font-family: 'Rowdies', cursive;
+
+        }
+
+        #section-project-desc:hover {
+            animation-name: spin;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes spin {
+            30% {
+                transform: rotate(2deg);
+            }
+
+            60% {
+                transform: rotate(-2deg);
+            }
+
+        }
+
+        .projects-children {
+            transition: outline 0.5s ease-in-out;
+        }
+
+        .projects-children:hover {
+            outline: 4px solid purple;
+        }
+
+        #project1 {
+            background: url('https://cdn.freecodecamp.org/testable-projects-fcc/images/tic-tac-toe.png');
+            background-position: center;
+            background-size: cover;
+            width: 27%;
+            height: 68.5%;
+            border-radius: 5%;
+            position: relative;
+        }
+
+        #project1::after {
+            content: "Tic Tac Toe";
+            border-radius: 5%;
+            background: rgba(22, 21, 21, 0.6);
+            position: absolute;
+            top: 105%;
+            left: 50%;
+            width: 70%;
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Rowdies', cursive;
+            transform: translateX(-50%);
+            color: rgb(216, 180, 20);
+        }
+
+        #project2::after {
+            content: "Calculator";
+            border-radius: 5%;
+            background: rgba(22, 21, 21, 0.6);
+            position: absolute;
+            top: 105%;
+            left: 50%;
+            width: 70%;
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Rowdies', cursive;
+            transform: translateX(-50%);
+            color: rgb(216, 180, 20);
+        }
+
+        #project3::after {
+            content: "Sudoku";
+            border-radius: 5%;
+            background: rgba(22, 21, 21, 0.6);
+            position: absolute;
+            top: 105%;
+            left: 50%;
+            width: 70%;
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Rowdies', cursive;
+            transform: translateX(-50%);
+            color: rgb(216, 180, 20);
+        }
+
+        #project2 {
+            background: url('https://cdn-media-1.freecodecamp.org/images/0r9I8Gu7J9pMbfzUG4hL6tU7RCP-cDhsaGp1');
+            background-position: center;
+            background-size: 102%;
+            width: 27%;
+            height: 68.5%;
+            border-radius: 5%;
+            position: relative;
+        }
+
+        #project3 {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg/640px-Sudoku_Puzzle_by_L2G-20050714_standardized_layout.svg.png');
+            background-position: center;
+            background-size: 100% 95%;
+            width: 27%;
+            height: 68.5%;
+            border-radius: 5%;
+            position: relative;
+        }
+
+
+        /* End of Projects section  */
+
+        /* Navbar */
+        #navbar {
+            width: 100%;
+            height: 70px;
+            background: crimson;
+            color: white;
+            position: fixed;
+            z-index: 10;
+            /* grid-template-rows:70% 30% 30% 30%; */
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 30px;
+        }
+
+        #a3 {
+            margin-right: 50px;
+        }
+
+        .a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            font-family: 'Supermercado One', cursive;
+            transition: background 0.5s ease;
+            padding: 10px;
+            width: 70px;
+            height: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .a:hover {
+            background: rgba(22, 21, 21, 0.6);
+        }
+
+        /* End of Navbar */
+
+        /* Contact */
+        #contact {
+            background-color: #F1F0CC;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        #contact-me {
+            position: absolute;
+            margin: 0;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%);
+            font-style: italic;
+            font-family: 'Supermercado', cursive;
+            font-size: 5em;
+        }
+
+        #contacts {
+            width: 80%;
+            height: 30%;
+            position: absolute;
+            margin: 0;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%);
+            /* border:1px solid black; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10%;
+        }
+
+        .contact-children {
+            text-decoration: none;
+            font-size: 3em;
+            color: rgb(56, 56, 56);
+            font-family: 'Supermercado One', cursive;
+            transition: margin 0.5s ease;
+        }
+
+        .contact-children:hover {
+            margin-top: 20px;
+            text-decoration: underline;
+            color: rgb(24, 162, 207);
+        }
+
+        /* End of Contact */
+
+    </style>
+
+    <head>
+        <link rel="shortcut icon"
+            href="https://media.istockphoto.com/photos/neon-3d-font-blue-and-pink-neon-light-3d-rendering-letter-p-picture-id1250020980?k=20&m=1250020980&s=170667a&w=0&h=zSTJcUgz9mnfPpv9eWAcgGEykGZlsTKN6CQu7DTlQXg="
+            type="image/x-icon">
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> My Portfolio </title>
+    </head>
+
+    <body>
+        <section id='navbar'>
+            <a href="#welcome-section" id='a1' class='a'>About</a>
+            <a href="#projects-container" id='a2' class='a'>Projects</a>
+            <a href="#contact" id='a3' class='a'>Contact</a>
+        </section>
+        <section id='welcome-section'>
+            <h1 class='name'>Hey there! I'm CalmingWaves!</h1>
+            <div class='name-compliment'>an aspiring web developer<div>
+        </section>
+        <section id='projects-container'>
+            <div id='section-project-desc'>- Projects -</div>
+            <div class='projects'>
+                <a class="projects-children" id="project1" href='https://playtictactoe.org/' target="_blank"></a>
+                <a class="projects-children" id="project2" href='https://www.desmos.com/scientific' target="_blank"></a>
+                <a class="projects-children" id="project3" href='https://sudoku.com/' target="_blank"></a>
+            </div>
+        </section>
+        <section id='contact'>
+            <h1 id='contact-me'>Contact Me</h1>
+            <div id='contacts'>
+                <a href="mailto:snoopydankl@gmail.com" class="contact-children" id="contact1">Email</a>
+                <a href="https://discordapp.com/users/817175859071811585/" class="contact-children" id="contact2"
+                    target="_blank">Discord</a>
+                <a href="https://github.com/SlitherinPython" class="contact-children" id="contact3"
+                    target="_blank">Github</a>
+            </div>
+        </section>
+    </body>
+
+</html>
